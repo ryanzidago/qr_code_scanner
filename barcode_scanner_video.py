@@ -59,7 +59,7 @@ while True:
 
 		# configuring payload for our request # CHANGE school_id LATER !
 		payload = {
-		'school_id': random.choice(range(1, 2)),
+		'school_id': 14,
 		'current_date': time.strftime("%d/%m/%Y"),
 		'profile_id': barcodeData
 		}
@@ -68,10 +68,11 @@ while True:
 		if barcodeData not in found:
 
 			r = requests.post("https://quanttine-staging.herokuapp.com/api", json=payload)
-			print(f"Profile id scanned from user's qr code : {barcodeData}.")
+			print(f"Profile id n°{barcodeData} scanned from user's qr code.")
 			print(r.ok)
 			print(r.status_code)
 			print(r.url)
+			print("\n")
 
 			csv.write("{},{}\n".format(datetime.datetime.now(),
 				barcodeData))
