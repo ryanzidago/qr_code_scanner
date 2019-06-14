@@ -67,7 +67,7 @@ while True:
 		# the timestamp + barcode to disk and update the set
 		if barcodeData not in found:
 
-			r = requests.post("https://quanttine-staging.herokuapp.com/api", json=payload)
+			r = requests.post("https://quanttine.herokuapp.com/api", json=payload)
 			print(f"Profile id n°{barcodeData} scanned from user's qr code.")
 			print(r.ok)
 			print(r.status_code)
